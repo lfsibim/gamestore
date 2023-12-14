@@ -46,7 +46,7 @@ public class ProdutoController {
         if(categoriaRepository.existsById(produto.getCategoria().getId()))
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body(produtoRepository.save(produto));
-        throw new ResponseStatusException((HttpStatus.BAD_REQUEST, "A categoria informada não existe!", null);
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A categoria informada não existe!", null);
     }
 
     @PutMapping
