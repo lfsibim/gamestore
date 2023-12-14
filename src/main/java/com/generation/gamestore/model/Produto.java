@@ -25,6 +25,10 @@ public class Produto {
     @NotBlank(message = "O preço do produto é obrigatório!")
     private float preco;
 
+    @ManyToOne
+    @JsonIgnoreProperties("produto")
+    private Categoria categoria;
+
     public Long getId() {
         return id;
     }
@@ -56,5 +60,12 @@ public class Produto {
     public void setPreco(float preco) {
         this.preco = preco;
     }
-    
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }
