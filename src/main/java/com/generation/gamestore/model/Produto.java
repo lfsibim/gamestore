@@ -3,6 +3,7 @@ package com.generation.gamestore.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -22,7 +23,7 @@ public class Produto {
     @Column(length = 250)
     private String descricao;
 
-    @NotBlank(message = "O preço do produto é obrigatório!")
+    @NotNull(message = "O preço do produto é obrigatório!")
     private float preco;
 
     @ManyToOne
