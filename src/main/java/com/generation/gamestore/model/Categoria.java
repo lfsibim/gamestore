@@ -13,12 +13,12 @@ public class Categoria {
     private Long id;
 
     @NotBlank(message = "Por favor, insira um tipo de categoria!")
-    @Size(min = 4, max = 50, message = "O tipo da categoria deve ter no mínimo 4 e no máximo 50 caracteres!")
+    @Size(min = 2, max = 50, message = "O tipo da categoria deve ter no mínimo 4 e no máximo 50 caracteres!")
     @Column(length = 50)
     private String tipo;
 
     @NotBlank(message = "Por favor, insira a marca do produto!")
-    @Size(min = 5, max = 100, message = "A marca do produto deve ter no mínimo 5 e no máximo 100 caracteres!")
+    @Size(min = 2, max = 50, message = "A marca do produto deve ter no mínimo 5 e no máximo 100 caracteres!")
     @Column(length = 100)
     private String marca;
 
