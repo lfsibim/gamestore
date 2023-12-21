@@ -28,7 +28,6 @@ public class BasicSecurityConfig {
 
     @Bean
     UserDetailsService userDetailsService() {
-
         return new UserDetailsServiceImpl();
     }
 
@@ -53,13 +52,11 @@ public class BasicSecurityConfig {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
         http
                 .sessionManagement(management -> management
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(csrf -> csrf.disable())
                 .cors(withDefaults());
-
         http
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/usuarios/logar").permitAll()
@@ -70,9 +67,7 @@ public class BasicSecurityConfig {
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .httpBasic(withDefaults());
-
         return http.build();
-
     }
 
 }
